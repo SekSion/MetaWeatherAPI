@@ -1,0 +1,24 @@
+Location: {{weather.title}}
+<br>
+Current Time:{{weather.time | date:'medium'}}
+<br>
+Time Zone:{{weather.timezone}} - {{weather.timezone_name}}
+
+<br>
+Sun Rise:{{weather.sun_rise| date:'medium'}}
+
+<br>
+Sun Set:{{weather.sun_set | date:'medium'}}
+
+<div class="sources">
+    Sources
+    <ul>
+        <li *ngFor="let item of weather.sources" class="source">
+            {{item.title}};
+        </li>
+    </ul>
+</div>
+<hr>
+<div class="weather-info">
+    <app-weather-info [weatherInfo]="weather.consolidated_weather"></app-weather-info>
+</div>

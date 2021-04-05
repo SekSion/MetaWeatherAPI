@@ -1,0 +1,28 @@
+<div *ngFor="let info of weatherInfo; index as i;" class="weather-info-wrapper">
+    <div class="container">
+        <div class="day-info" [ngClass]="{'first': i == 0}">
+            {{info.applicable_date | date:'d EEEE'}}
+        </div>
+        <div class="weather-state">
+            <img src="https://www.metaweather.com/static/img/weather/{{info.weather_state_abbr}}.svg"
+                alt="weather display" width="40px" srcset="">
+            {{info.weather_state_name}}
+        </div>
+        <div class="temp-wrapper">
+            <div class="temp min">{{info.min_temp | round}}&#730;C</div>
+            <div class="temp max"> {{info.max_temp | round}}&#730;C</div>
+        </div>
+        <div class="wind-wrapper">
+
+            <img src="../../../../../assets/img/longArrow.svg"
+                [ngStyle]="{'transform': 'rotate('+info.wind_direction+'deg)'}" width="40px" alt="">
+            {{info.wind_direction_compass}}
+        </div>
+
+        <div class="humidity-wrapper">
+            <img src="../../../../../assets/img/drop.png" width="40px" alt="">
+            {{info.humidity}}
+        </div>
+
+    </div>
+</div>

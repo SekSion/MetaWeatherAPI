@@ -24,5 +24,3 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-git config user.email "you@example.com"
- git config  user.name "Your Name"

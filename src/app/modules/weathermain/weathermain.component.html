@@ -1,0 +1,32 @@
+<header>
+    <h1>Weather Cast</h1>
+</header>
+
+<div class="choiceSearch">
+    <form [formGroup]="chooseSearchForm">
+        <label><input type="radio" value="query" formControlName="searchType" checked><span>Query</span></label>
+        <label><input type="radio" value="latlong" formControlName="searchType"><span>Lat/Long</span></label>
+    </form>
+</div>
+
+
+<form class="weatherForm" [formGroup]="weatherForm">
+    <div class="input-wrapper">
+        <label for="query">Query</label>
+        <input type="text" name="query" id="query" formControlName="query">
+    </div>
+    <div class="input-wrapper">
+        <label for="lat">lat</label>
+        <input type="text" name="lat" id="lat" formControlName="lat">
+    </div>
+
+    <div class="input-wrapper">
+        <label for="long">long</label>
+        <input type="text" name="long" id="long" formControlName="long">
+    </div>
+    <button [disabled]="!weatherForm.valid" type="button" class="btn" (click)="search()">Search</button>
+</form>
+
+<span *ngIf="loading">Loading...</span>
+<app-weather-template *ngIf="(weather | json) != '{}'" [weather]="weather"></app-weather-template>
+

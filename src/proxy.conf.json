@@ -1,0 +1,11 @@
+{
+    "/api/*": {
+        "target": "https://www.metaweather.com/api/",
+        "secure": true,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/api": ""
+          }
+    }
+}

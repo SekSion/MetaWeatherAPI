@@ -1,0 +1,13 @@
+.weather-info {
+    display: flex;
+}
+
+app-weather-info {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    @media screen and (max-width:1200px) {
+        flex-wrap: wrap;
+    }
+
+}
